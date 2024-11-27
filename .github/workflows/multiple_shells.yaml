@@ -16,7 +16,7 @@ jobs:
         shell: python
   run-windows-command:
     runs-on: windows-latest
-    needs: ["run-shell-command"]
+    needs: ["run-windows-command"]
     steps:
       - name: current directory with powershell
         run: Get-Location
@@ -33,4 +33,4 @@ jobs:
           echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-        shell: bash
+        shell: powershell
